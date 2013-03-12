@@ -1,47 +1,71 @@
 '''
 Created on 11/03/2013
 
-@author: Alumno 
+@author: Alumno
 '''
+'''
+Created on 11/03/2013
 
+@author: Alumno
+'''
 def main():
-    fin = True
-    x = int(input("Introduzca un numero:"))
-    y = int(input("Introduzca otro numero:"))
-    while(fin):
-        op = input("Introduzca el tipo de operacion: ")
+    
+    print ("")
+    print ("CALCULADORA PYTHON")
+    print ("******************\n")
+      
+    valor1 = int(input("Primer valor: "))       # Primer valor
+    valor2 = int(input("Segundo valor: "))      # Segundo valor
+    calcular = True
+   
+    def sumar(numero1, numero2):    
+        suma = numero1 + numero2
+        return suma
+    
+    def restar(numero1, numero2):
+        resta = numero1 - numero2
+        return resta
+    
+    def multiplicar(numero1, numero2):
+        multiplica = numero1 * numero2
+        return multiplica
+    
+    def dividir(numero1, numero2):
+        divide = numero1 / numero2
+        return divide
+    
+    resultado = 0
+    
+    while(calcular):
+        opcion = input("Seleccione operacion: ")
+        if (opcion == "+"):                     # Suma
+            resultado = sumar(valor1,valor2)
+            calcular = False
+            
+        elif (opcion == "-"):                   # Resta
+            resultado = restar(valor1, valor2)
+            calcular = False
+            
+        elif opcion == "*":                     # Multiplicacion
+            resultado = multiplicar(valor1, valor2)
+            calcular = False
+                
+        elif opcion == "/":                     # Division
+            resultado = dividir(valor1, valor2)
+            calcular = False
         
-        if op == "+":
-            print ("La suma es: "+str(sumar(x,y)))
-            fin = False
-        elif op == "-":
-            print ("La resta es: "+str(restar(x,y)))
-            fin = False
-        elif op == "*":
-            print ("La multiplicacion es: "+str(multiplicar(x,y)))
-            fin = False
-        elif op == "/":
-            print ("La division es: "+str(dividir(x,y)))
-            fin = False
-        else:
-            print ("Introduzca una operacion valida")
-        
-
-
-def sumar(a,b):
-    return a+b
-
-def restar(a,b):
-    return a-b
-  
-def multiplicar(a,b):
-    return a*b
-
-def dividir(a,b):
-    return a/b
-
+        else:                                   # Opcion incorrecta
+            print ("Seleccione una operacion correcta")
+    
+    print("Resultado: " + str(resultado))
+    
+    # Para volver a ejercutar la calculadora 
+    eleccion = input('Quieres realizar otra operacion (SI/NO)?')
+    if(eleccion == "SI"):
+        eleccion = main()
+    elif(eleccion == "NO"):
+        print ("ADIOS")
+    else:
+        print ("Eleccion incorrecta")   
 main()
-
-
-
     
