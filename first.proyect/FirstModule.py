@@ -1,7 +1,7 @@
 '''
 Created on 11/03/2013
 
-@author: Alumno
+@author: Pablo
 '''
 
 def main():
